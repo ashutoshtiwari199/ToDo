@@ -1,16 +1,21 @@
-import React from "react";
+import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from "./Navigation";
 import Todo from "./Todo";
 
-function index() {
+import {useState} from 'react'
+
+function Index() {
+
+  const [themeColor, setThemeColor]= useState("dark")
+
   return (
-    <div className=''>
-      <Navigation/>
+    <div className={`${themeColor} todo-container`} >
+      <Navigation value={{themeColor,setThemeColor}} />
       <h1 className="fw-light text-center">ToDo List</h1>
-      <Todo/>
+      <Todo value={{themeColor}} />
     </div>
   );
 }
 
-export default index;
+export default Index;
